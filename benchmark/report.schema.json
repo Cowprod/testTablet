@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/testTablet/report.schema.json",
+  "title": "Tablet diagnostic report",
+  "type": "object",
+  "required": ["generatedAt", "device", "android", "battery", "network", "display", "storage", "permissions"],
+  "properties": {
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "device": {
+      "type": "object",
+      "required": ["manufacturer", "model"],
+      "properties": {
+        "manufacturer": { "type": ["string", "null"] },
+        "model": { "type": ["string", "null"] },
+        "serial": { "type": ["string", "null"] },
+        "uuid": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "android": {
+      "type": "object",
+      "required": ["version"],
+      "properties": {
+        "version": { "type": ["string", "null"] },
+        "sdk": { "type": ["integer", "null"] },
+        "cordovaVersion": { "type": ["string", "null"] },
+        "appVersion": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "battery": {
+      "type": "object",
+      "required": ["level", "plugged"],
+      "properties": {
+        "level": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "plugged": { "type": ["boolean", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "online": { "type": ["boolean", "null"] },
+        "type": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "display": {
+      "type": "object",
+      "properties": {
+        "width": { "type": ["integer", "null"] },
+        "height": { "type": ["integer", "null"] },
+        "pixelRatio": { "type": ["number", "null"] },
+        "orientation": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "storage": {
+      "type": "object",
+      "properties": {
+        "totalBytes": { "type": ["integer", "null"], "minimum": 0 },
+        "freeBytes": { "type": ["integer", "null"], "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "permissions": {
+      "type": "object",
+      "required": ["camera", "microphone", "notifications"],
+      "properties": {
+        "camera": { "$ref": "#/$defs/permission" },
+        "microphone": { "$ref": "#/$defs/permission" },
+        "notifications": { "$ref": "#/$defs/permission" }
+      },
+      "additionalProperties": true
+    },
+    "adb": {
+      "type": ["object", "null"],
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "permission": {
+      "type": "string",
+      "enum": ["granted", "denied", "not-applicable", "unknown"]
+    }
+  },
+  "additionalProperties": true
+}
