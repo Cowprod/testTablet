@@ -6,3 +6,8 @@ www/build/
 .DS_Store
 .idea/
 .vscode/
+diagnostic-app/platforms/
+diagnostic-app/plugins/
+diagnostic-app/node_modules/
+diagnostic-app/www/build/
+diagnostic-app/platforms/android/app/build/
