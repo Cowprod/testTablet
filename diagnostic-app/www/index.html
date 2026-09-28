@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Tablet Diagnostic</title>
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>Tablet Diagnostic</h1>
+            <span id="app-version" class="muted"></span>
+        </header>
+
+        <div id="error-msg" class="error" style="display:none;"></div>
+        <div id="loading" class="muted">Collecting diagnostics...</div>
+
+        <div id="report-container" style="display:none;">
+            <section>
+                <h2>Device</h2>
+                <dl>
+                    <dt>Manufacturer</dt><dd id="d-manufacturer">-</dd>
+                    <dt>Model</dt><dd id="d-model">-</dd>
+                    <dt>Serial</dt><dd id="d-serial">-</dd>
+                    <dt>UUID</dt><dd id="d-uuid">-</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>Android</h2>
+                <dl>
+                    <dt>Android version</dt><dd id="a-version">-</dd>
+                    <dt>SDK</dt><dd id="a-sdk">-</dd>
+                    <dt>Cordova</dt><dd id="a-cordova">-</dd>
+                    <dt>App version</dt><dd id="a-app">-</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>Battery</h2>
+                <dl>
+                    <dt>Level</dt><dd id="b-level">-</dd>
+                    <dt>Plugged</dt><dd id="b-plugged">-</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>Network</h2>
+                <dl>
+                    <dt>Online</dt><dd id="n-online">-</dd>
+                    <dt>Type</dt><dd id="n-type">-</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>Display</h2>
+                <dl>
+                    <dt>Resolution</dt><dd id="di-resolution">-</dd>
+                    <dt>Pixel ratio</dt><dd id="di-pixelratio">-</dd>
+                    <dt>Orientation</dt><dd id="di-orientation">-</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>Storage (web quota)</h2>
+                <dl>
+                    <dt>Total</dt><dd id="s-total">-</dd>
+                    <dt>Available</dt><dd id="s-free">-</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>Permissions</h2>
+                <dl>
+                    <dt>Camera</dt><dd id="p-camera">-</dd>
+                    <dt>Microphone</dt><dd id="p-microphone">-</dd>
+                    <dt>Notifications</dt><dd id="p-notifications">-</dd>
+                </dl>
+                <button id="request-permissions-btn" type="button">Request permissions</button>
+            </section>
+
+            <section>
+                <h2>JSON Report</h2>
+                <pre id="json-report"></pre>
+                <div class="buttons">
+                    <button id="copy-json-btn" type="button">Copy JSON</button>
+                    <button id="refresh-btn" type="button">Refresh</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

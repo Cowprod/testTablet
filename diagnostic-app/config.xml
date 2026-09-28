@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.diagnostic.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Tablet Diagnostic</name>
+    <description>Diagnostic tool for the Android tablet benchmark fleet.</description>
+    <author email="benchmark@example.local">Benchmark</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="Orientation" value="default" />
+    <preference name="android-minSdkVersion" value="24" />
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/*" xmlns:android="http://schemas.android.com/apk/res/android">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+        </config-file>
+    </platform>
+</widget>

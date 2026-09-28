@@ -1,0 +1,27 @@
+{
+  "name": "tablet-diagnostic",
+  "version": "1.0.0",
+  "displayName": "Tablet Diagnostic",
+  "description": "Diagnostic tool for the Android tablet benchmark fleet.",
+  "private": true,
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-device": {},
+      "cordova-plugin-battery-status": {},
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-android-permissions": {},
+      "cordova-plugin-app-version": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  },
+  "devDependencies": {
+    "cordova-android": "^15.1.0",
+    "cordova-plugin-android-permissions": "^1.1.5",
+    "cordova-plugin-app-version": "^0.1.14"
+  }
+}
