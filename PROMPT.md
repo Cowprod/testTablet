@@ -56,7 +56,11 @@ Documente les sources réellement consultées dans `docs/RESEARCH.md` avec :
 - erreurs visibles et non silencieuses ;
 - le code doit rester lisible et modeste ;
 - ne demande pas à l'utilisateur de faire manuellement ce que tes outils peuvent vérifier ;
-- ne modifie pas le schéma JSON de benchmark sauf impossibilité réelle, à expliquer avant tout changement.
+- ne modifie pas le schéma JSON de benchmark sauf impossibilité réelle, à expliquer avant tout changement ;
+- préserve impérativement le dépôt Git existant et son historique ;
+- ne supprime, ne recrée, ne réinitialise et ne remplace jamais `.git` ;
+- ne supprime pas `.gitignore`, `PROMPT.md`, `BENCHMARK.md`, `SCORING.md`, `RESULTS.md`, `benchmark/` ni `docs/RESEARCH.md` ;
+- si un outil d'initialisation refuse de travailler dans le repo existant, adapte ta méthode de travail sans détruire ni déplacer les éléments de benchmark.
 
 ## Validation
 
